@@ -1,3 +1,5 @@
+// import webpack from 'webpack'
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -16,25 +18,48 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      // {src: '/js/jquery-3.6.0.min.js'},
+      // {src: '/js/bootstrap.min.js'},
+      // {src: '/js/modernizr.custom.js'},
+      // {src: '/js/jquery.easing.js'},
+      // {src: '/js/jquery.appear.js'},
+      // {src: '/js/jquery.scrollto.js'},
+      // {src: '/js/menu.js'},
+      // {src: '/js/owl.carousel.min.js'},
+      // {src: '/js/jquery.magnific-popup.min.js'},
+      // {src: '/js/quick-form.js'},
+      // {src: '/js/request-form.js'},
+      // {src: '/js/jquery.validate.min.js'},
+      // {src: '/js/jquery.ajaxchimp.min.js'},
+      // {src: '/js/wow.js'},
+      // {src: '/js/custom.js'}
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/css/style.css', '@/assets/css/menu.css', '@/assets/css/bootstrap.min.css',
-    '@/assets/css/flaticon.css', '@/assets/css/dropdown-effects/fade-down.css',
-    '@/assets/css/magnific-popup.css', '@/assets/css/owl.carousel.min.css',
-    '@/assets/css/owl.theme.default.min.css', '@/assets/css/responsive.css',
-    '@/assets/css/animate.css'
+    '@/assets/css/bootstrap.min.css',
+    '@/assets/css/flaticon.css', 
+    '@/assets/css/menu.css',
+    '@/assets/css/dropdown-effects/fade-down.css',
+    '@/assets/css/magnific-popup.css',
+    '@/assets/css/owl.carousel.min.css',
+    '@/assets/css/owl.theme.default.min.css',
+    '@/assets/css/animate.css',
+    '@/assets/css/style.css',
+    '@/assets/css/responsive.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/assets/js/bootstrap.min.js', '@/assets/js/custom.js', '@/assets/js/quick-form.js',
-    '@/assets/js/jquery.magnific-popup.min.js', '@/assets/js/request-form.js', '@/assets/js/jquery.validate.min.js',
-    '@/assets/js/jquery.ajaxchimp.min.js', '@/assets/js/wow.js' , '@/assets/js/owl.carousel.min.js', 
-    '@/assets/js/menu.js', '@/assets/js/jquery-3.6.0.min.js' , '@/assets/js/modernizr.custom.js',
-    '@/assets/js/jquery.easing.js', '@/assets/js/jquery.appear.js', '@/assets/js/jquery.scrollto.js'
+
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery',
+    //   jQuery: 'jquery',
+    //   'window.jQuery': 'jquery'
+    // })
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -47,10 +72,17 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
+    // 'bootstrap-vue/nuxt',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    // plugins: [
+    //   new webpack.ProvidePlugin({
+    //     $: 'jquery',
+    //     jQuery: 'jquery',
+    //     'window.jQuery': 'jquery'
+    //   })
+    // ]
   }
 }

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "form",
+    "path": "/form",
+    "component": "/home/matraore/Documents/NuxtjsPage/pages/form.vue",
+    "chunkName": "pages/form",
+    "_name": "_132118ff"
+  },
+  {
+    "name": "profile",
+    "path": "/profile",
+    "component": "/home/matraore/Documents/NuxtjsPage/pages/profile.vue",
+    "chunkName": "pages/profile",
+    "_name": "_51781d3e"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/matraore/Documents/NuxtjsPage/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_90bb89b2"
+  }
+]

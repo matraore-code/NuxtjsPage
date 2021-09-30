@@ -1,0 +1,20 @@
+{
+  "Banner": {
+    "description": "Auto imported from components/Banner.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/Header.vue"
+  },
+  "How": {
+    "description": "Auto imported from components/How.vue"
+  },
+  "Loader": {
+    "description": "Auto imported from components/Loader.vue"
+  },
+  "Pricing": {
+    "description": "Auto imported from components/Pricing.vue"
+  }
+}
