@@ -1,12 +1,12 @@
 <template>
   <body>
     <div id="page" class="page">
-      <Loader/>
+      <Loader />
       <Header />
       <Banner />
-      <How/>
-      <Pricing/>
-      <Footer/>
+      <How />
+      <Pricing />
+      <Footer />
     </div>
     <!-- <h1>Moctar</h1> -->
   </body>
@@ -43,5 +43,7 @@ export default {
   },
 };
 </script>
-<style>
-</style>
+<style scoped>
+
+</style>>
+
