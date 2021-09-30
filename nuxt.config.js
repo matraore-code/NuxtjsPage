@@ -6,7 +6,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'bCarte',
+    title: 'Business Carte, échanger vos informations facilement',
     htmlAttrs: {
       lang: 'en'
     },
@@ -17,7 +17,8 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
+     { rel: 'icon', type: 'image/png', href : '/favicon/favicon.png'}
     ],
     script: [
       // {src: '/js/jquery-3.6.0.min.js'},

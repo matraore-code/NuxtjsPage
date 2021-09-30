@@ -9,11 +9,11 @@
         <div class="col-lg-10 col-xl-8">
           <div class="section-title title-01 mb-80">
             <!-- Title -->
-            <h2 class="h2-md">Simple And Flexible Pricing</h2>
+            <h2 class="h2-md">Tarification simple et flexible</h2>
 
             <!-- Text -->
             <p class="p-xl">
-              No credit card required. Pay one time and for life
+              Aucune carte de crédit requise. Payez une seule fois et à vie
             </p>
           </div>
         </div>
@@ -180,9 +180,9 @@
         <div class="col-lg-10 offset-lg-1">
           <div class="pricing-notice text-center mb-40">
             <p class="p-md">
-              The above prices do not include applicable taxes based on your
-              billing address. The final price will be displayed on the checkout
-              page, before the payment is completed
+              Les prix ci-dessus n’incluent pas les taxes applicables basées sur votre
+              adresse de facturation. Le prix final sera affiché sur la caisse
+              page, avant la fin du paiement
             </p>
           </div>
         </div>

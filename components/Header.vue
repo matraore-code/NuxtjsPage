@@ -42,11 +42,12 @@
 
                 <!-- HEADER BUTTON -->
                 <li class="nl-simple" aria-haspopup="true">
-                  <a
+                  <Nuxt-link to='/form' class="btn btn-violet-red tra-grey-hover last-link"> Commencer</Nuxt-link>
+                  <!-- <a
                     href="#content-5"
                     class="btn btn-violet-red tra-grey-hover last-link"
                     >Commencer</a
-                  >
+                  > -->
                 </li>
               </ul>
             </nav>
