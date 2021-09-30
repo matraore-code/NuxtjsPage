@@ -1,0 +1,8 @@
+{
+    "env": {
+        "DB_USER": "amine",
+        "DB_PASSWORD": "Lgc216III0I5xioQ",
+        "DB_NAME": "bCarte",
+        "JWT_KEY": "b-carte_secret_key"
+    }
+}
