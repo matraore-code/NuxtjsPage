@@ -24,10 +24,14 @@
             <!-- Footer Links -->
             <ul class="foo-links text-secondary clearfix">
               <li>
-                <p class="p-md"><a href="#">Qui Sommes Nous</a></p>
+                <p class="p-md">
+                  <NuxtLink to="/About">Qui Nous Sommes?</NuxtLink>
+                </p>
               </li>
               <li>
-                <p class="p-md"><a href="#">Notre Equipe</a></p>
+                <p class="p-md">
+                  <NuxtLink to="/About">Notre Equipe</NuxtLink>
+                </p>
               </li>
             </ul>
           </div>
@@ -63,7 +67,9 @@
                 <p class="p-md"><a href="#">FAQs</a></p>
               </li>
               <li>
-                <p class="p-md"><a href="#">Contactez Nous</a></p>
+                <p class="p-md">
+                  <NuxtLink to="/Contact">Contactez Nous</NuxtLink>
+                </p>
               </li>
             </ul>
           </div>
@@ -83,10 +89,10 @@
                 <a href="#"><span class="flaticon-facebook"></span></a>
               </li>
               <li>
-                <a href="#"><span class="flaticon-twitter"></span></a>
+                <a href="#"><span class="flaticon-instagram"></span></a>
               </li>
               <li>
-                <a href="#"><span class="flaticon-github"></span></a>
+                <a href="#"><span class="flaticon-linkedin"></span></a>
               </li>
               <li>
                 <a href="#"><span class="flaticon-youtube"></span></a>

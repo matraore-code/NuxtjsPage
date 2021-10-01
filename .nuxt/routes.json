@@ -1,10 +1,24 @@
 [
   {
+    "name": "About",
+    "path": "/About",
+    "component": "/home/matraore/Documents/NuxtjsPage/pages/About.vue",
+    "chunkName": "pages/About",
+    "_name": "_0f5c8042"
+  },
+  {
     "name": "Confirmation",
     "path": "/Confirmation",
     "component": "/home/matraore/Documents/NuxtjsPage/pages/Confirmation.vue",
     "chunkName": "pages/Confirmation",
     "_name": "_c0872de0"
+  },
+  {
+    "name": "Contact",
+    "path": "/Contact",
+    "component": "/home/matraore/Documents/NuxtjsPage/pages/Contact.vue",
+    "chunkName": "pages/Contact",
+    "_name": "_a68b67d6"
   },
   {
     "name": "form",

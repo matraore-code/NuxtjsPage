@@ -27,17 +27,17 @@
               <ul class="wsmenu-list nav-violet-red-hover">
                 <!-- MEGAMENU -->
                 <li aria-haspopup="true" class="mg_link">
-                  <a href="#">Accueil </a>
+                  <NuxtLink to="/">Accueil</NuxtLink>
                 </li>
                 <!-- END MEGAMENU -->
 
                 <!-- DROPDOWN MENU -->
-                <li aria-haspopup="true"><a href="#">Comment ça marche</a></li>
+                <li aria-haspopup="true"><a href="#content-9">Comment ça marche</a></li>
 
-                <li aria-haspopup="true"><a href="#">A Propos</a></li>
+                <li aria-haspopup="true"><NuxtLink to="/About">A Propos</NuxtLink></li>
 
                 <!-- DROPDOWN MENU -->
-                <li aria-haspopup="true"><a href="#">Tarif</a></li>
+                <li aria-haspopup="true"><a href="#pricing-2">Tarif</a></li>
                 <!-- END DROPDOWN MENU -->
 
                 <!-- HEADER BUTTON -->

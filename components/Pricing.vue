@@ -54,8 +54,8 @@
               </ul>
 
               <!-- Pricing Plan Button -->
-              <a href="#" class="btn btn-sm btn-tra-grey tra-skyblue-hover"
-                >Choisir</a
+              <NuxtLink to="/form" class="btn btn-sm btn-tra-grey tra-skyblue-hover"
+                >Choisir</NuxtLink
               >
             </div>
           </div>
@@ -107,8 +107,8 @@
               </ul>
 
               <!-- Pricing Plan Button -->
-              <a href="#" class="btn btn-sm btn-tra-grey tra-skyblue-hover"
-                >Choisir</a
+              <NuxtLink to="/form" class="btn btn-sm btn-tra-grey tra-skyblue-hover"
+                >Choisir</NuxtLink
               >
             </div>
           </div>
@@ -165,8 +165,8 @@
               </ul>
 
               <!-- Pricing Plan Button -->
-              <a href="#" class="btn btn-sm btn-tra-grey tra-skyblue-hover"
-                >Select Plan</a
+              <NuxtLink to="/form" class="btn btn-sm btn-tra-grey tra-skyblue-hover"
+                >Choisir</NuxtLink
               >
             </div>
           </div>
