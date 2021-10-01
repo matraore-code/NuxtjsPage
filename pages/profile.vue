@@ -18,15 +18,17 @@
             />
             <h3 class="text-center fs-2">User User</h3>
             <h4 class="text-center">Software Engineer - 1337</h4>
-            <p class="text-center w-50 m-auto">
+            <div class="col text-center mx-auto w-75">
+                          <span >
               Cela permet d'ajouter un titre et une description par défaut pour
               le référencement ou bien définir la fenêtre d'affichage ou ajouter
               la favicon.
-            </p>
+            </span>
+            </div>
             <div class="c mt-5 top-m">
               <a href="#" class="btn btn-success btn-profile w-50 mt-5">
                 <i class="far fa-envelope "></i>
-                <span class="text-center ">user@gmail.com</span></a
+                <span class="text-center "> user@gmail.com</span></a
               >
             </div>
             <div class="c">
@@ -44,7 +46,7 @@
               <i class="fas fa-link mx-3 fs-2 text-danger"></i>
             </div>
             <div class="d-flex justify-content-center re">
-                <a href="#" class="btn btn-success btn-profile w-25 mt-5 register">
+                <a href="#" class="btn btn-success btn-profile mt-5 register">
                 
                 Enregistrer</a
               >
@@ -122,6 +124,12 @@ h2 {
 }
 .btn-profile {
   background-color: #ec595a;
+  padding: 0.5rem;
+}
+
+.btn-profile:hover {
+    background-color: #ec595a;
+    border: 1px solid #ec595a;
 }
 
 .re {

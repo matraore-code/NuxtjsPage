@@ -1,5 +1,12 @@
 [
   {
+    "name": "Confirmation",
+    "path": "/Confirmation",
+    "component": "/home/matraore/Documents/NuxtjsPage/pages/Confirmation.vue",
+    "chunkName": "pages/Confirmation",
+    "_name": "_c0872de0"
+  },
+  {
     "name": "form",
     "path": "/form",
     "component": "/home/matraore/Documents/NuxtjsPage/pages/form.vue",

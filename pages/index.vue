@@ -1,7 +1,7 @@
 <template>
   <body>
     <div id="page" class="page">
-      <Loader />
+      <!-- <Loader /> -->
       <Header />
       <Banner />
       <How />
@@ -41,6 +41,8 @@ export default {
       ],
     };
   },
+
+
 };
 </script>
 <style scoped>
