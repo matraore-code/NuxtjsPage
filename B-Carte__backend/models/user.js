@@ -9,11 +9,11 @@ const userSchema = new Schema({
     name: { type: String, required: true },
     surname: { type: String, required: true },
     address: { type: String, required: true },
-    codePostal: { type: String, required: false },
+    codePostal: { type: String, required: true },
     city: { type: String, required: true },
-    province: { type: String, required: false },
     country: { type: String, required: true },
     email: { type: String, required: true, unique: true },
+    profession: { type: String, required:true },
     password: { type: String, required: true, minlength: 8 },
     telephone: { type: String, required: true },
     whatsapp: { type: String, required: false },
@@ -23,6 +23,7 @@ const userSchema = new Schema({
     fax: { type: String, required: false },
     github: { type: String, required: false },
     biography: { type: String, required: true },
+    users: [{ type: mongoose.Types.ObjectId, required: false, ref: 'User' }],
     notes: [{ type: mongoose.Types.ObjectId, required: false, ref: 'Note' }],
     rappels: [{ type: mongoose.Types.ObjectId, required: false, ref: 'Rappel' }]
 });

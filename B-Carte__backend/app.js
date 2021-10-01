@@ -9,6 +9,7 @@ const HttpError = require('./models/http-error');
 const usersRoutes = require('./routes/users-routes');
 const notesRoutes = require('./routes/notes-routes');
 const rappelsRoutes = require('./routes/rappels-routes');
+const countrisRoutes = require('./routes/countries-routes');
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(bodyParser.json());
 app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*'); // *: domains to access
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
         'Access-Control-Allow-Headers',
         'Origin, X-Requested-With, Content-Type, Accept, Authorization'
@@ -29,6 +30,7 @@ app.use((req, res, next) => {
 app.use('/api/users', usersRoutes);
 app.use('/api/notes', notesRoutes);
 app.use('/api/rappels', rappelsRoutes);
+app.use('/api/countries', countrisRoutes);
 
 app.use((re, res, next) => {
     throw new HttpError("Could Not Find This Route!", 404);
@@ -47,7 +49,7 @@ app.use((error, req, res, next) => {
 })
 
 mongoose.connect(
-    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.8w9zo.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.n49i9.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
 ).then(() => {
     app.listen(process.env.PORT || 5000);
 }).catch((err) => {
