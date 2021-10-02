@@ -18,7 +18,7 @@
         Sans doute vous voulez savoir ce qu’on fait, pourquoi on le fait, ou
         peut être découvrir qui on est, histoire d’être sûr de ne pas vous faire
         avoir. Bon réflexe. On va commencer par faire court ! B-carte a été
-        créée en septembre 2021 par trois étudiants avec l’envie de digitaliser
+        créée en septembre 2021 par quatre étudiants avec l’envie de digitaliser
         les cartes de visites et de resauter plus facilement. Chez b-carte, on
         s’est fixé une mission : Faire de notre produit, l’un des meilleurs en
         termes de qualité et d’impact environnemental. Concrètement, on essaye
@@ -37,24 +37,42 @@
     </div>
     <div class="container teams">
       <h3 class="fw-bolder text-center">Notre Equipe</h3>
-      <div class="d-flex justify-content-center pt-5">
-        <div class="team p-3">
-          <img src="~/assets/images/user.jpg" alt="" srcset="" class="imgs" />
-          <h5 class="mt-2 ms-3">Mohamed Amine</h5>
-        <i class="fab fa-linkedin-in mx-3 fs-2 text-primary"></i>
-
+      <div class="row d-flex justify-content-center pt-5">
+        <div class="col team py-3">
+          <div class="imag d-flex justify-content-center">
+            <img src="~/assets/images/mypic.jpg" alt="" srcset="" class="imgs" />
+          </div>          <h5 class="team-text">Moctar Traore</h5>
+          <div class="icon">
+            <a href="https://github.com/matraore-code"><span class="flaticon-github"></span></a>
+            <a href="https://www.linkedin.com/in/mamadou-moctar-traore"><span class="flaticon-linkedin icons"></span></a>
+          </div>
         </div>
-        <div class="team p-3">
-          <img src="~/assets/images/user.jpg" alt="" srcset="" class="imgs" />
-          <h5 class="mt-2 ms-3">Mohamed Amine</h5>
+        <div class="col team p-3">
+          <div class="imag d-flex justify-content-center">
+            <img src="~/assets/images/user.jpg" alt="" srcset="" class="imgs" />
+          </div>
+          <h5 class="team-text">Mohamed Amine</h5>
+          <div class="icon">
+            <a href="#"><span class="flaticon-github"></span></a>
+            <a href="#"><span class="flaticon-linkedin icons"></span></a>
+          </div>
         </div>
-        <div class="team p-3">
-          <img src="~/assets/images/user.jpg" alt="" srcset="" class="imgs" />
-          <h5 class="mt-2 ms-3">Mohamed Amine</h5>
+        <div class="col team p-3">
+          <div class="imag d-flex justify-content-center">
+            <img src="~/assets/images/mel.jpg" alt="" srcset="" class="imgs" />
+          </div>          <h5 class="team-text">Mohamed El Hadjaoui</h5>
+          <div class="icon">
+            <a href="https://github.com/elhadjaoui/elhadjaoui"><span class="flaticon-github"></span></a>
+            <a href="https://www.linkedin.com/in/mohamed-el-hadjaoui-00b087149"><span class="flaticon-linkedin icons"></span></a>
+          </div>
         </div>
-        <div class="team p-3">
-          <img src="~/assets/images/user.jpg" alt="" srcset="" class="imgs" />
-          <h5 class="mt-2 ms-3">Mohamed Amine</h5>
+        <div class="col team p-3">
+          <div class="imag d-flex justify-content-center">
+            <img src="~/assets/images/hady.jpg" alt="" srcset="" class="imgs" />
+          </div>          <h5 class="team-text">Cheick Hady Diasse</h5>
+          <div class="icon">
+            <a href="https://www.linkedin.com/in/cheikh-hady-diasse-050b58122"><span class="flaticon-linkedin icons"></span></a>
+          </div>
         </div>
       </div>
     </div>
@@ -95,8 +113,6 @@ export default {
       ],
     };
   },
-
-
 };
 </script>
 
@@ -109,5 +125,26 @@ export default {
 }
 .imgs {
   width: 200px;
+  height: 130px;
+}
+
+.team-text {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+.flaticon-github {
+  color: black;
+}
+
+.icons {
+  color: #0077b5;
+  padding-left: 0.5rem;
+}
+
+.icon{
+  display: flex;
+  justify-content: center;
 }
 </style>
