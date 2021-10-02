@@ -4,6 +4,7 @@ export { default as Header } from '../../components/Header.vue'
 export { default as How } from '../../components/How.vue'
 export { default as Loader } from '../../components/Loader.vue'
 export { default as Pricing } from '../../components/Pricing.vue'
+export { default as Tarif } from '../../components/Tarif.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

@@ -16,5 +16,8 @@
   },
   "Pricing": {
     "description": "Auto imported from components/Pricing.vue"
+  },
+  "Tarif": {
+    "description": "Auto imported from components/Tarif.vue"
   }
 }

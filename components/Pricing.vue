@@ -28,33 +28,39 @@
               <!-- Plan Price -->
               <div class="pricing-plan">
                 <!-- Plan Title -->
-                <div class="pricing-plan-title">
-                  <h5 class="h5-xs">Basique</h5>
+                <div class="pricing-title">
+                  <h5 class="h5-xs text-center">Basique</h5>
                 </div>
 
                 <!-- Price -->
-                <span class="dark-color text-center">GRATUIT</span>
+                <h5 class="formule">GRATUIT</h5>
               </div>
 
               <!-- Plan Features  -->
               <ul class="features">
-                <li>
-                  <p class="p-md"><span>Creation d'une carte virtuel</span></p>
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+
+                  <p class="ps-1"><span>Creation d'une carte virtuelle.</span></p>
                 </li>
-                <li>
-                  <p class="p-md">
-                    <span>Partage ta carte via QR code, email</span>
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
+                    <span>Partagez votre carte via QR code ou email.</span>
                   </p>
                 </li>
-                <li>
-                  <p class="p-md">
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
                     <span>Carnet d'adresse avec contact illimite</span>
                   </p>
                 </li>
               </ul>
 
               <!-- Pricing Plan Button -->
-              <NuxtLink to="/form" class="btn btn-sm btn-tra-grey tra-skyblue-hover"
+              <NuxtLink
+                to="/form"
+                class="btn btn-sm btn-price"
                 >Choisir</NuxtLink
               >
             </div>
@@ -67,47 +73,55 @@
               <!-- Plan Price -->
               <div class="pricing-plan">
                 <!-- Plan Title -->
-                <div class="pricing-plan-title">
-                  <h5 class="h5-xs">Standart</h5>
+                <div class="pricing-title">
+                  <h5 class="h5-xs text-center">Standard</h5>
                 </div>
 
                 <!-- Price -->
-                <sup class="dark-color">dhs</sup>
-                <span class="dark-color">149</span>
+                <h5 class="formule">149 mad</h5>
               </div>
 
               <!-- Plan Features  -->
               <ul class="features">
-                <li>
-                  <p class="p-md"><span>Carte business physique</span></p>
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1"><span>Carte business physique</span></p>
                 </li>
-                <li>
-                  <p class="p-md"><span>Carte virtuelle</span></p>
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
+                  <span>Carte virtuelle</span></p>
                 </li>
-                <li>
-                  <p class="p-md">
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
                     <span>Partage ta carte via QR code, email or a nfcTag</span>
                   </p>
                 </li>
-                <li>
-                  <p class="p-md">
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
                     <span>Carnet d'adresse avec contact illimite</span>
                   </p>
                 </li>
-                <li>
-                  <p class="p-md">
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
                     <span>Ajouter des notes et des tags au Contact</span>
                   </p>
                 </li>
-                <li>
-                  <p class="p-md">
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
                     <span>Synchroniser avec les contacts google</span>
                   </p>
                 </li>
               </ul>
 
               <!-- Pricing Plan Button -->
-              <NuxtLink to="/form" class="btn btn-sm btn-tra-grey tra-skyblue-hover"
+              <NuxtLink
+                to="/form"
+                class="btn btn-sm btn-price"
                 >Choisir</NuxtLink
               >
             </div>
@@ -118,54 +132,63 @@
               <!-- Plan Price -->
               <div class="pricing-plan">
                 <!-- Plan Title -->
-                <div class="pricing-plan-title">
-                  <h5 class="h5-xs">Premium</h5>
+                <div class="pricing-title">
+                  <h5 class="h5-xs text-center">Premium</h5>
                 </div>
 
                 <!-- Price -->
-                <sup class="dark-color">dhs</sup>
-                <span class="dark-color">199</span>
+               
+                <h5 class="formule">199 dhs</h5>
               </div>
 
               <!-- Plan Features  -->
               <ul class="features">
-                <li>
-                  <p class="p-md">
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
                     <span>Carte business physique personnaliser</span>
                   </p>
                 </li>
-                <li>
-                  <p class="p-md"><span>Carte virtuelle</span></p>
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1"><span>Carte virtuelle</span></p>
                 </li>
-                <li>
-                  <p class="p-md">
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
                     <span>Partage ta carte via QR code, email or a nfcTag</span>
                   </p>
                 </li>
-                <li>
-                  <p class="p-md">
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
                     <span>Carnet d'adresse avec contact illimite</span>
                   </p>
                 </li>
-                <li>
-                  <p class="p-md">
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
                     <span>Ajouter des notes et des tags au Contact</span>
                   </p>
                 </li>
-                <li>
-                  <p class="p-md">
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
                     <span>Synchroniser avec les contacts google</span>
                   </p>
                 </li>
-                <li>
-                  <p class="p-md">
+                <li class="d-flex">
+                  <a href="#"><span class="flaticon-check"></span></a>
+                  <p class="ps-1">
                     <span>Remplacement gratuit de la carte</span>
                   </p>
                 </li>
               </ul>
 
               <!-- Pricing Plan Button -->
-              <NuxtLink to="/form" class="btn btn-sm btn-tra-grey tra-skyblue-hover"
+              <NuxtLink
+                to="/form"
+                class="btn btn-sm btn-price"
                 >Choisir</NuxtLink
               >
             </div>
@@ -180,9 +203,9 @@
         <div class="col-lg-10 offset-lg-1">
           <div class="pricing-notice text-center mb-40">
             <p class="p-md">
-              Les prix ci-dessus n’incluent pas les taxes applicables basées sur votre
-              adresse de facturation. Le prix final sera affiché sur la caisse
-              page, avant la fin du paiement
+              Les prix ci-dessus n’incluent pas les taxes applicables basées sur
+              votre adresse de facturation. Le prix final sera affiché sur la
+              caisse page, avant la fin du paiement
             </p>
           </div>
         </div>
@@ -192,14 +215,68 @@
   </section>
 </template>
 
+<script>
+export default {
+  head() {
+    return {
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap",
+        },
+        {
+          rel: "stylesheet",
+          href: "https://use.fontawesome.com/releases/v5.15.4/css/all.css",
+        },
+      ],
+      script: [
+        { src: "/js/jquery-3.6.0.min.js" },
+        { src: "/js/bootstrap.min.js" },
+      ],
+    };
+  },
+};
+</script>
+
+
 <style>
 #pricing-2 {
-          background: rgb(246, 245, 240);
-      background: linear-gradient(
-        90deg,
-        rgba(246, 245, 240, 1) 0%,
-        rgba(244, 241, 232, 1) 38%,
-        rgba(254, 247, 220, 1) 100%
-      );
+  background: rgb(246, 245, 240);
+  background: linear-gradient(
+    90deg,
+    rgba(246, 245, 240, 1) 0%,
+    rgba(244, 241, 232, 1) 38%,
+    rgba(254, 247, 220, 1) 100%
+  );
+
 }
+
+  span {
+    font-size: 1rem;
+    font-weight: 200 !important;
+  }
+
+  .flaticon-check {
+    color: green;
+  }
+
+  .formule {
+    color: #ec595a;
+    margin: 0 auto;
+    font-size: 2rem !important;
+    text-align: center !important;
+  }
+
+  .btn-price{
+    background: #ec595a;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .btn-price:hover{
+    background: #ec595a;
+    margin: 0 auto;
+    display: block;
+    color: #fff;
+  }
 </style>

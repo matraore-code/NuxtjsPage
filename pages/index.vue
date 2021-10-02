@@ -6,6 +6,7 @@
       <Banner />
       <How />
       <Pricing />
+      <!-- <Tarif/> -->
       <Footer />
     </div>
     <!-- <h1>Moctar</h1> -->

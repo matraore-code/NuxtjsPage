@@ -12,3 +12,4 @@ You can directly use them in pages and other components without the need to impo
 - `<How>` | `<how>` (components/How.vue)
 - `<Loader>` | `<loader>` (components/Loader.vue)
 - `<Pricing>` | `<pricing>` (components/Pricing.vue)
+- `<Tarif>` | `<tarif>` (components/Tarif.vue)
