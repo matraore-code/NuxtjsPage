@@ -89,10 +89,7 @@ export default {
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap",
         },
-        {
-          rel: "stylesheet",
-          href: "https://use.fontawesome.com/releases/v5.15.4/css/all.css",
-        },
+
       ],
       script: [
         { src: "/js/jquery-3.6.0.min.js" },

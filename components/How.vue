@@ -45,7 +45,7 @@
               <!-- Preview Image -->
               <img
                 class="img-fluid"
-                src="images/dashboard-07.png"
+                src="#"
                 alt="video-preview"
               />
             </div>
