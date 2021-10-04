@@ -9,6 +9,7 @@ const _c0872de0 = () => interopDefault(import('../pages/Confirmation.vue' /* web
 const _a68b67d6 = () => interopDefault(import('../pages/Contact.vue' /* webpackChunkName: "pages/Contact" */))
 const _132118ff = () => interopDefault(import('../pages/form.vue' /* webpackChunkName: "pages/form" */))
 const _51781d3e = () => interopDefault(import('../pages/profile.vue' /* webpackChunkName: "pages/profile" */))
+const _5f35df43 = () => interopDefault(import('../pages/Search.vue' /* webpackChunkName: "pages/Search" */))
 const _90bb89b2 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -42,6 +43,10 @@ export const routerOptions = {
     path: "/profile",
     component: _51781d3e,
     name: "profile"
+  }, {
+    path: "/Search",
+    component: _5f35df43,
+    name: "Search"
   }, {
     path: "/",
     component: _90bb89b2,

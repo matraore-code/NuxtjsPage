@@ -35,6 +35,13 @@
     "_name": "_51781d3e"
   },
   {
+    "name": "Search",
+    "path": "/Search",
+    "component": "/home/matraore/Documents/NuxtjsPage/pages/Search.vue",
+    "chunkName": "pages/Search",
+    "_name": "_5f35df43"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/matraore/Documents/NuxtjsPage/pages/index.vue",

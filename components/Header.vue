@@ -34,10 +34,13 @@
                 <!-- DROPDOWN MENU -->
                 <li aria-haspopup="true"><a href="#content-9">Comment ça marche</a></li>
 
-                <li aria-haspopup="true"><NuxtLink to="/About">A Propos</NuxtLink></li>
+
 
                 <!-- DROPDOWN MENU -->
                 <li aria-haspopup="true"><a href="#pricing-2">Tarif</a></li>
+                <li aria-haspopup="true"><NuxtLink to="/About">A Propos</NuxtLink></li>
+                <li aria-haspopup="true"><NuxtLink to="/Search">Annuaire</NuxtLink></li>
+
                 <!-- END DROPDOWN MENU -->
 
                 <!-- HEADER BUTTON -->
