@@ -39,7 +39,7 @@
                 <!-- DROPDOWN MENU -->
                 <li aria-haspopup="true"><a href="#pricing-2">Tarif</a></li>
                 <li aria-haspopup="true"><NuxtLink to="/About">A Propos</NuxtLink></li>
-                <li aria-haspopup="true"><NuxtLink to="/Search">Annuaire</NuxtLink></li>
+                <!-- <li aria-haspopup="true"><NuxtLink to="/Search">Annuaire</NuxtLink></li> -->
 
                 <!-- END DROPDOWN MENU -->
 
