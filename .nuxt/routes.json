@@ -2,50 +2,57 @@
   {
     "name": "About",
     "path": "/About",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/About.vue",
+    "component": "/home/matraore/Desktop/NuxtjsPage/pages/About.vue",
     "chunkName": "pages/About",
-    "_name": "_0f5c8042"
+    "_name": "_0632dcc4"
+  },
+  {
+    "name": "coming",
+    "path": "/coming",
+    "component": "/home/matraore/Desktop/NuxtjsPage/pages/coming.vue",
+    "chunkName": "pages/coming",
+    "_name": "_475e9de0"
   },
   {
     "name": "Confirmation",
     "path": "/Confirmation",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/Confirmation.vue",
+    "component": "/home/matraore/Desktop/NuxtjsPage/pages/Confirmation.vue",
     "chunkName": "pages/Confirmation",
-    "_name": "_c0872de0"
+    "_name": "_e84d4f98"
   },
   {
     "name": "Contact",
     "path": "/Contact",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/Contact.vue",
+    "component": "/home/matraore/Desktop/NuxtjsPage/pages/Contact.vue",
     "chunkName": "pages/Contact",
-    "_name": "_a68b67d6"
+    "_name": "_60057671"
   },
   {
     "name": "form",
     "path": "/form",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/form.vue",
+    "component": "/home/matraore/Desktop/NuxtjsPage/pages/form.vue",
     "chunkName": "pages/form",
-    "_name": "_132118ff"
+    "_name": "_75a16c23"
   },
   {
     "name": "profile",
     "path": "/profile",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/profile.vue",
+    "component": "/home/matraore/Desktop/NuxtjsPage/pages/profile.vue",
     "chunkName": "pages/profile",
-    "_name": "_51781d3e"
+    "_name": "_04c3479a"
   },
   {
     "name": "Search",
     "path": "/Search",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/Search.vue",
+    "component": "/home/matraore/Desktop/NuxtjsPage/pages/Search.vue",
     "chunkName": "pages/Search",
-    "_name": "_5f35df43"
+    "_name": "_22edf967"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/index.vue",
+    "component": "/home/matraore/Desktop/NuxtjsPage/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_90bb89b2"
+    "_name": "_b5a766fa"
   }
 ]

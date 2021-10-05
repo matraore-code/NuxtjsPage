@@ -4,13 +4,14 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _0f5c8042 = () => interopDefault(import('../pages/About.vue' /* webpackChunkName: "pages/About" */))
-const _c0872de0 = () => interopDefault(import('../pages/Confirmation.vue' /* webpackChunkName: "pages/Confirmation" */))
-const _a68b67d6 = () => interopDefault(import('../pages/Contact.vue' /* webpackChunkName: "pages/Contact" */))
-const _132118ff = () => interopDefault(import('../pages/form.vue' /* webpackChunkName: "pages/form" */))
-const _51781d3e = () => interopDefault(import('../pages/profile.vue' /* webpackChunkName: "pages/profile" */))
-const _5f35df43 = () => interopDefault(import('../pages/Search.vue' /* webpackChunkName: "pages/Search" */))
-const _90bb89b2 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _0632dcc4 = () => interopDefault(import('../pages/About.vue' /* webpackChunkName: "pages/About" */))
+const _475e9de0 = () => interopDefault(import('../pages/coming.vue' /* webpackChunkName: "pages/coming" */))
+const _e84d4f98 = () => interopDefault(import('../pages/Confirmation.vue' /* webpackChunkName: "pages/Confirmation" */))
+const _60057671 = () => interopDefault(import('../pages/Contact.vue' /* webpackChunkName: "pages/Contact" */))
+const _75a16c23 = () => interopDefault(import('../pages/form.vue' /* webpackChunkName: "pages/form" */))
+const _04c3479a = () => interopDefault(import('../pages/profile.vue' /* webpackChunkName: "pages/profile" */))
+const _22edf967 = () => interopDefault(import('../pages/Search.vue' /* webpackChunkName: "pages/Search" */))
+const _b5a766fa = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -25,31 +26,35 @@ export const routerOptions = {
 
   routes: [{
     path: "/About",
-    component: _0f5c8042,
+    component: _0632dcc4,
     name: "About"
   }, {
+    path: "/coming",
+    component: _475e9de0,
+    name: "coming"
+  }, {
     path: "/Confirmation",
-    component: _c0872de0,
+    component: _e84d4f98,
     name: "Confirmation"
   }, {
     path: "/Contact",
-    component: _a68b67d6,
+    component: _60057671,
     name: "Contact"
   }, {
     path: "/form",
-    component: _132118ff,
+    component: _75a16c23,
     name: "form"
   }, {
     path: "/profile",
-    component: _51781d3e,
+    component: _04c3479a,
     name: "profile"
   }, {
     path: "/Search",
-    component: _5f35df43,
+    component: _22edf967,
     name: "Search"
   }, {
     path: "/",
-    component: _90bb89b2,
+    component: _b5a766fa,
     name: "index"
   }],
 
