@@ -53,7 +53,7 @@ const signup = async (req, res, next) => {
 
     const createdUser = new User({
         formule: req.body.formule,
-        photo: "",
+        image: "",
         name: req.body.name,
         surname: req.body.surname,
         address: req.body.address,
@@ -145,6 +145,13 @@ const login = async (req, res, next) => {
 };
 
 const updateUser = async (req, res, next) => {
+    const userId = req.params.id;
+
+    if (userId !== req.userData.userId) {
+        const error = new HttpError('You have No Access To this User!', 403);
+        return next(error);
+    }
+
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) { 
@@ -185,7 +192,7 @@ const updateUser = async (req, res, next) => {
     }
 
     user.formule = formule || user.formule;
-    user.photo = req.file && req.file.path || user.photo,
+    user.image = req.file && req.file.path || user.image,
     user.name = name || user.name;
     user.surname = surname || user.surname;
     user.address = address || user.address;
