@@ -21,12 +21,22 @@ const getNoteById = async (req, res, next) => {
         const error = new HttpError("We couldn't Find Note for the provided ID!", 404);
         return next(error);
     }
+    
+    if (note.creator.toString() !== req.userData.userId) {
+        const error = new HttpError('You have No Access To this Note!', 403);
+        return next(error);
+    }
 
     res.json({ note: note.toObject({ getters: true }) });
 };
 
 const getNotesByUserId = async (req, res, next) => {
     const userId = req.params.uid;
+
+    if (userId !== req.userData.userId) {
+        const error = new HttpError('You have No Access To this Note!', 403);
+        return next(error);
+    }
 
     let userWithNotes;
     try {
@@ -44,6 +54,7 @@ const getNotesByUserId = async (req, res, next) => {
         const error = new HttpError("The users with the Basique account can't have Notes!", 403);
         return next(error);
     }
+
     res.json({ notes: userWithNotes.notes.map(note => note.toObject({ getters: true })) });
 };
 

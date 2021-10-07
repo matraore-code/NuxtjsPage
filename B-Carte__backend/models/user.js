@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     formule: { type: String, required: true },
+    cards: [{ type: String, required:false }],
     photo: { type: String, required: false },
     name: { type: String, required: true },
     surname: { type: String, required: true },

@@ -23,11 +23,21 @@ const getRappelById = async (req, res, next) => {
         return next(error);
     }
 
+    if (rappel.creator.toString() !== req.userData.userId) {
+        const error = new HttpError('You have No Access To this Rappel!', 403);
+        return next(error);
+    }
+
     res.json({ rappel: rappel.toObject({ getters: true }) });
 };
 
 const getRappelByUserId = async (req, res, next) => {
     const userId = req.params.uid;
+
+    if (userId !== req.userData.userId) {
+        const error = new HttpError('You have No Access To this Rappel!', 403);
+        return next(error);
+    }
 
     let userWithRappels;
     try {
