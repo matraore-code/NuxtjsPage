@@ -212,7 +212,6 @@ export default {
           const response = await fetch(`http://localhost:5000/api/users/signup`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          mode: 'cors',
           body: JSON.stringify({
               formule: this.formule,
               name: this.name,
@@ -228,9 +227,22 @@ export default {
               biography: this.biography
             })
           });
-          await this.$router.push('/profile');
+
+          const content = await response.json();
+
+          const tokenExpirationTime = new Date(new Date().getTime() + 1000 * 60 * 60);
+          localStorage.setItem(
+            'userData',
+            JSON.stringify({
+              userId: await content.userId,
+              token: await content.token,
+              expiration: tokenExpirationTime.toISOString()
+            })
+          );
+          
+          await this.$router.push('/Confirmation');
         } catch (err) {
-          console.log(err.json());
+          console.log(err);
         }
       }
     }
@@ -241,6 +253,7 @@ export default {
     });
     const content = await response.json();
     this.countries = content.countries.map(country => country.name);
+    this.countries = this.countries.sort();
   }
 };
 
