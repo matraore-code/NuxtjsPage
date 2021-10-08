@@ -1,7 +1,7 @@
 {
     "env": {
         "DB_USER": "b-Carte_User",
-        "DB_PASSWORD": "uDr0PGyU22b6brXY",
+        "DB_PASSWORD": "k9QWEiJsIBkBmIJP",
         "DB_NAME": "bCarte",
         "JWT_KEY": "b-carte_secret_key"
     }
