@@ -212,23 +212,25 @@ export default {
           const response = await fetch(`http://localhost:5000/api/users/signup`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          mode: 'cors',
           body: JSON.stringify({
               formule: this.formule,
               name: this.name,
               surname: this.surname,
               email: this.email,
               telephone: this.telephone,
-              prefession: this.prefession,
+              profession: this.prefession,
               address: this.address,
               city: this.city,
               codePostal: this.codePostal,
               country: this.country,
+              password: "012356789",
               biography: this.biography
             })
           });
-          console.log(await response);
+          await this.$router.push('/profile');
         } catch (err) {
-          console.log(err);
+          console.log(err.json());
         }
       }
     }
