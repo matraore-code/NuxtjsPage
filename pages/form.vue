@@ -223,7 +223,7 @@ export default {
               city: this.city,
               codePostal: this.codePostal,
               country: this.country,
-              password: "012356789",
+              password: "0123456789",
               biography: this.biography
             })
           });
@@ -248,12 +248,17 @@ export default {
     }
   },
   async mounted() {
-    const response = await fetch(`http://localhost:5000/api/countries`, {
-      headers: { 'Content-Type': 'application/json' },
-    });
-    const content = await response.json();
-    this.countries = content.countries.map(country => country.name);
-    this.countries = this.countries.sort();
+    try {
+      const response = await fetch(`http://localhost:5000/api/countries`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const content = await response.json();
+      this.countries = content.countries.map(country => country.name);
+      this.countries = this.countries.sort();
+    } catch (err) {
+      console.log(err);
+    }
   }
 };
 

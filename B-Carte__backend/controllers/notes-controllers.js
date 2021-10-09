@@ -40,7 +40,7 @@ const getNotesByUserId = async (req, res, next) => {
 
     let userWithNotes;
     try {
-        userWithNotes = await User.findById(userId).populate('notes');
+        userWithNotes = await User.findById(userId, '-password').populate('notes');
     } catch (err) {
         const error = new HttpError("Something Went Wrong, we couldn't find a Note!", 500);
         return next(error);
@@ -67,7 +67,7 @@ const createNote = async (req, res, next) => {
 
     let user;
     try {
-        user = await User.findById(req.userData.userId);
+        user = await User.findById(req.userData.userId, '-password');
     } catch (err) {
         const error = new HttpError("Could Not create Note, Please Try again!", 500);
         return next(error);

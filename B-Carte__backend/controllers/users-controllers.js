@@ -18,6 +18,19 @@ const getUsers = async (req, res, next) => {
     res.json({ users: users.map(user => user.toObject({ getters: true })) });
 };
 
+const getUserById = async (req, res, next) => {
+    const userId = req.params.uid;
+    let user;
+    try {
+        user = await User.findById(userId, '-password -notes -rappels -cards -users');
+    } catch (err) {
+        const error = new HttpError('Fetching User failed, please try again later!', 422);
+        return next(error);
+    }
+
+    res.json({ user: user.toObject({ getters: true }) });
+};
+
 const signup = async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -29,10 +42,10 @@ const signup = async (req, res, next) => {
         email,
         password,
     } = req.body;
-
+    
     let existingUser;
     try {
-        existingUser = await User.findOne({ email: email });
+        existingUser = await User.findOne({ email: email }, '-password');
     } catch (err) {
         const error = new HttpError('Signing Up Failed, Please Try Again Later!', 500);
         return next(error);
@@ -230,8 +243,8 @@ const addFriend = async (req, res, next) => {
     let existingFriend;
     let user;
     try {
-        existingFriend = await User.findById(friendId);
-        user = await User.findById(req.userData.userId);
+        existingFriend = await User.findById(friendId, '-password');
+        user = await User.findById(req.userData.userId, '-password');
     } catch (err) {
         const error = new HttpError("Adding Friend Failed, Please Try again!", 500);
         return next(error);
@@ -269,8 +282,8 @@ const removeFriend = async (req, res, next) => {
     let existingFriend;
     let user;
     try {
-        existingFriend = await User.findById(friendId);
-        user = await User.findById(req.userData.userId);
+        existingFriend = await User.findById(friendId, '-password');
+        user = await User.findById(req.userData.userId, '-password');
     } catch (err) {
         const error = new HttpError("Remove Friend Failed, Please Try again!", 500);
         return next(error);
@@ -298,6 +311,7 @@ const removeFriend = async (req, res, next) => {
 };
 
 exports.getUsers = getUsers;
+exports.getUserById = getUserById;
 exports.signup = signup;
 exports.login = login;
 exports.updateUser = updateUser;
