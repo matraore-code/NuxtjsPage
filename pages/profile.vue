@@ -24,7 +24,7 @@
             <div class="c mt-5 top-m">
               <a href="#" class="btn btn-success btn-profile w-50 mt-5">
                 <i class="far fa-envelope "></i>
-                <span class="text-center ">{{ email }}</span></a
+                <span class="text-center "></span></a
               >
             </div>
             <div class="c">
@@ -51,7 +51,8 @@
           </div>
         </div>
         <div v-else>
-          <span class="text-danger">{{ message }}</span>
+          <span class="text-danger">Aucun utilisateur avec ce nom.
+          </span>
         </div>
       </div>
     </section>
