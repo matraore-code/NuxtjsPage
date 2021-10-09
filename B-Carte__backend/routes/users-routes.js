@@ -34,7 +34,7 @@ router.use(checkAuth);
 router.get('/:uid', usersControllers.getUserById);
 
 router.patch('/update/:uid',
-    fileUpload.single('image'),
+    // fileUpload.single('image'),
     usersControllers.updateUser
 );
 

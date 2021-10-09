@@ -3,56 +3,48 @@
     "name": "About",
     "path": "/About",
     "component": "/goinfre/mlachheb/NuxtjsPage/pages/About.vue",
-    "chunkName": "pages/About",
-    "_name": "_4eeb8f9b"
+    "chunkName": "pages/About"
   },
   {
     "name": "coming",
     "path": "/coming",
     "component": "/goinfre/mlachheb/NuxtjsPage/pages/coming.vue",
-    "chunkName": "pages/coming",
-    "_name": "_35f95f83"
+    "chunkName": "pages/coming"
   },
   {
     "name": "Confirmation",
     "path": "/Confirmation",
     "component": "/goinfre/mlachheb/NuxtjsPage/pages/Confirmation.vue",
-    "chunkName": "pages/Confirmation",
-    "_name": "_3f91d8d2"
+    "chunkName": "pages/Confirmation"
   },
   {
     "name": "Contact",
     "path": "/Contact",
     "component": "/goinfre/mlachheb/NuxtjsPage/pages/Contact.vue",
-    "chunkName": "pages/Contact",
-    "_name": "_44c2e92e"
+    "chunkName": "pages/Contact"
   },
   {
     "name": "form",
     "path": "/form",
     "component": "/goinfre/mlachheb/NuxtjsPage/pages/form.vue",
-    "chunkName": "pages/form",
-    "_name": "_36363a86"
+    "chunkName": "pages/form"
   },
   {
     "name": "profile",
     "path": "/profile",
     "component": "/goinfre/mlachheb/NuxtjsPage/pages/profile.vue",
-    "chunkName": "pages/profile",
-    "_name": "_2cfe8b52"
+    "chunkName": "pages/profile"
   },
   {
     "name": "Search",
     "path": "/Search",
     "component": "/goinfre/mlachheb/NuxtjsPage/pages/Search.vue",
-    "chunkName": "pages/Search",
-    "_name": "_1188bb0a"
+    "chunkName": "pages/Search"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/goinfre/mlachheb/NuxtjsPage/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_119d6b00"
+    "chunkName": "pages/index"
   }
 ]

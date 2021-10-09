@@ -162,8 +162,7 @@ const login = async (req, res, next) => {
 };
 
 const updateUser = async (req, res, next) => {
-    const userId = req.params.id;
-
+    const userId = req.params.uid;
     if (userId !== req.userData.userId) {
         const error = new HttpError('You have No Access To this User!', 403);
         return next(error);
