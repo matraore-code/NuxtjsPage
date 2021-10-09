@@ -2,7 +2,7 @@
   <body>
     <section>
       <div class="container">
-        <div class="logo">
+        <div v-if="fetched" class="logo">
           <img
             src="~/assets/images/logon.png"
             alt=""
@@ -50,6 +50,9 @@
             </div>
           </div>
         </div>
+        <div v-else>
+          <span class="text-danger">{{ message }}</span>
+        </div>
       </div>
     </section>
   </body>
@@ -77,6 +80,8 @@ export default {
   },
   data () {
     return {
+      fetched: false,
+      message: '',
       image: '',
       name: '',
       surname: '',
@@ -106,14 +111,28 @@ export default {
       });
 
       const content = await response.json();
-      const user = await content.user;
+      if (content.message) {
+        this.message = content.message;
+        console.log(content.message);
+      } else {
+        this.fetched = true;
+        const user = await content.user;
       
-      this.image = user.image;
-      this.name = user.name;
-      this.surname = user.surname;
-
+        this.image = user.image;
+        this.name = user.name;
+        this.surname = user.surname;
+        this.profession = user.profession;
+        this.email = user.email;
+        this.telephone = user.telephone;
+        this.biography = user.biography;
+        this.linkedin = user.linkedin;
+        this.instagram = user.instagram;
+        this.facebook = user.facebook;
+        this.whatsapp = user.whatsapp;
+        this.fax = user.fax;
+      }
     } catch (err) {
-      console.log();
+      console.log(err.message);
     }
   }
 };

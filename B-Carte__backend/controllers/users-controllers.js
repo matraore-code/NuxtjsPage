@@ -27,6 +27,10 @@ const getUserById = async (req, res, next) => {
         const error = new HttpError('Fetching User failed, please try again later!', 422);
         return next(error);
     }
+    if (!user) {
+        const error = new HttpError("No User Found, Please check your login!", 403);
+        return next(error);
+    }
 
     res.json({ user: user.toObject({ getters: true }) });
 };

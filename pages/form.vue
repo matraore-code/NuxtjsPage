@@ -138,7 +138,7 @@
             <textarea v-model="biography" class="form-control" id="biography" rows="3"></textarea>
           </div>
         </div>
-        <span class="text-danger">{{errors}}</span>
+        <span class="text-danger">{{ errors }}</span>
         <button type="submit" class="btn btn-primary mb-3 btn-submit" v-on:click.prevent="submit">
           Créez un compte
         </button>
