@@ -13,7 +13,7 @@ const getCountries = async (req, res, next) => {
         return next(error);
     }
 
-    res.json({ countries: countries.map(country => country.toObject({ getters: true })) });
+    res.json({ countries: countries });
 };
 
 exports.getCountries = getCountries;

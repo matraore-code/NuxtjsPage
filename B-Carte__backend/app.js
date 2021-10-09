@@ -27,14 +27,17 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use('/api/countries', countrisRoutes);
+
+
 app.use('/api/users', usersRoutes);
 app.use('/api/notes', notesRoutes);
 app.use('/api/rappels', rappelsRoutes);
-app.use('/api/countries', countrisRoutes);
 
-app.use((re, res, next) => {
+app.use((req, res, next) => {
     throw new HttpError("Could Not Find This Route!", 404);
 });
+
 app.use((error, req, res, next) => {
     if (req.file) {
         fs.unlink(req.file.path, err => {

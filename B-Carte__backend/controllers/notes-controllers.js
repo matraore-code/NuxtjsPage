@@ -21,6 +21,11 @@ const getNoteById = async (req, res, next) => {
         const error = new HttpError("We couldn't Find Note for the provided ID!", 404);
         return next(error);
     }
+    
+    if (note.creator.toString() !== req.userData.userId) {
+        const error = new HttpError('You have No Access To this Note!', 403);
+        return next(error);
+    }
 
     res.json({ note: note.toObject({ getters: true }) });
 };
@@ -28,9 +33,14 @@ const getNoteById = async (req, res, next) => {
 const getNotesByUserId = async (req, res, next) => {
     const userId = req.params.uid;
 
+    if (userId !== req.userData.userId) {
+        const error = new HttpError('You have No Access To this Note!', 403);
+        return next(error);
+    }
+
     let userWithNotes;
     try {
-        userWithNotes = await User.findById(userId).populate('notes');
+        userWithNotes = await User.findById(userId, '-password').populate('notes');
     } catch (err) {
         const error = new HttpError("Something Went Wrong, we couldn't find a Note!", 500);
         return next(error);
@@ -44,6 +54,7 @@ const getNotesByUserId = async (req, res, next) => {
         const error = new HttpError("The users with the Basique account can't have Notes!", 403);
         return next(error);
     }
+
     res.json({ notes: userWithNotes.notes.map(note => note.toObject({ getters: true })) });
 };
 
@@ -56,7 +67,7 @@ const createNote = async (req, res, next) => {
 
     let user;
     try {
-        user = await User.findById(req.userData.userId);
+        user = await User.findById(req.userData.userId, '-password');
     } catch (err) {
         const error = new HttpError("Could Not create Note, Please Try again!", 500);
         return next(error);

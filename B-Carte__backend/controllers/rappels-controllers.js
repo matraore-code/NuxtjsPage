@@ -23,15 +23,25 @@ const getRappelById = async (req, res, next) => {
         return next(error);
     }
 
+    if (rappel.creator.toString() !== req.userData.userId) {
+        const error = new HttpError('You have No Access To this Rappel!', 403);
+        return next(error);
+    }
+
     res.json({ rappel: rappel.toObject({ getters: true }) });
 };
 
 const getRappelByUserId = async (req, res, next) => {
     const userId = req.params.uid;
 
+    if (userId !== req.userData.userId) {
+        const error = new HttpError('You have No Access To this Rappel!', 403);
+        return next(error);
+    }
+
     let userWithRappels;
     try {
-        userWithRappels = await User.findById(userId).populate('rappels');
+        userWithRappels = await User.findById(userId, '-password').populate('rappels');
     } catch (err) {
         const error = new HttpError("Something Went Wrong, we couldn't find a Rappel!", 500);
         return next(error);
@@ -59,7 +69,7 @@ const createRappel = async (req, res, next) => {
 
     let user;
     try {
-        user = await User.findById(req.userData.userId);
+        user = await User.findById(req.userData.userId, '-password');
     } catch(err) {
         const error = new HttpError("Could Not Create Rappel, Please Try again!", 500);
         return next(error);

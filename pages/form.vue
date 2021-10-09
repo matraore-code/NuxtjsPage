@@ -13,10 +13,10 @@
       <div class="form">
         <div class="col-md-3">
           <div class="mb-3">
-            <select class="form-select" aria-label="Formule">
-              <option selected>Basique</option>
-              <option value="1">Standart</option>
-              <option value="2">Premium</option>
+            <select v-model="formule" class="form-select" aria-label="Formule">
+              <option value="Basique" selected>Basique</option>
+              <option value="Standart">Standart</option>
+              <option value="Premium">Premium</option>
             </select>
           </div>
         </div>
@@ -24,6 +24,7 @@
           <div class="col-md-6">
             <div class="mb-3">
               <input
+                v-model="name"
                 type="text"
                 class="form-control"
                 id="name"
@@ -35,6 +36,7 @@
           <div class="col-md-6">
             <div class="mb-3">
               <input
+                v-model="surname"
                 type="text"
                 class="form-control"
                 id="surname"
@@ -49,6 +51,7 @@
           <div class="col-md-4">
             <div class="mb-3">
               <input
+                v-model="email"
                 type="email"
                 class="form-control"
                 id="email"
@@ -60,6 +63,7 @@
           <div class="col-md-4">
             <div class="mb-3">
               <input
+                v-model="telephone"
                 type="tel"
                 class="form-control"
                 id="telephone"
@@ -71,6 +75,7 @@
           <div class="col-md-4">
             <div class="mb-3">
               <input
+                v-model="prefession"
                 type="text"
                 class="form-control"
                 id="status"
@@ -85,6 +90,7 @@
           <div class="col-md-3">
             <div class="mb-3">
               <input
+                v-model="address"
                 type="text"
                 class="form-control"
                 id="address"
@@ -96,6 +102,7 @@
           <div class="col-md-3">
             <div class="mb-3">
               <input
+                v-model="city"
                 type="text"
                 class="form-control"
                 id="city"
@@ -107,6 +114,7 @@
           <div class="col-md-3">
             <div class="mb-3">
               <input
+                v-model="codePostal"
                 type="text"
                 class="form-control"
                 id="codePostal"
@@ -117,11 +125,9 @@
           </div>
           <div class="col-md-3">
             <div class="">
-              <select class="form-select" aria-label="Pays">
+              <select v-model="country" class="form-select" aria-label="Pays">
                 <option selected>Pays</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option v-for="(country) in this.countries" :key="country" :value="country">{{country}}</option>
               </select>
             </div>
           </div>
@@ -129,11 +135,11 @@
         <div class="row my-5">
           <div class="">
             <label for="biography" class="form-label">Biographie *</label>
-            <textarea class="form-control" id="biography" rows="3"></textarea>
+            <textarea v-model="biography" class="form-control" id="biography" rows="3"></textarea>
           </div>
         </div>
-
-        <button type="submit" class="btn btn-primary mb-3 btn-submit">
+        <span class="text-danger">{{ errors }}</span>
+        <button type="submit" class="btn btn-primary mb-3 btn-submit" v-on:click.prevent="submit">
           Créez un compte
         </button>
         <p class="text-center">
@@ -162,8 +168,100 @@ export default {
       ],
     };
   },
+  data() {
+    return {
+      formule: 'Basique',
+      name: '',
+      surname: '',
+      email: '',
+      telephone: '',
+      prefession: '',
+      address: '',
+      city: '',
+      codePostal: '',
+      country: 'Pays',
+      biography: '',
+      errors: '',
+      countries: []
+    }
+  },
+  methods: {
+    check_all() {
+      this.name = this.name.trim();
+      this.surname = this.surname.trim();
+      this.email = this.email.trim();
+      this.telephone = this.telephone.trim();
+      this.prefession = this.prefession.trim();
+      this.address = this.address.trim();
+      this.city = this.city.trim();
+      this.codePostal = this.codePostal.trim();
+      this.biography = this.biography.trim();
+      if (this.name === '' || this.surname === '' || this.email === ''
+        || this.telephone === '' || this.prefession === '' ||
+        this.address === '' || this.city === '' || codePostal === ''
+        || this.country === 'Pays' || this.biography === '') {
+          this.errors = "Remplir tous les champs.";
+      } else {
+        this.errors = "";
+      }
+    },
+    async submit() {
+      this.check_all();
+      if (this.errors === '') {
+        try {
+          const response = await fetch(`http://localhost:5000/api/users/signup`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+              formule: this.formule,
+              name: this.name,
+              surname: this.surname,
+              email: this.email,
+              telephone: this.telephone,
+              profession: this.prefession,
+              address: this.address,
+              city: this.city,
+              codePostal: this.codePostal,
+              country: this.country,
+              password: "0123456789",
+              biography: this.biography
+            })
+          });
 
+          const content = await response.json();
+
+          const tokenExpirationTime = new Date(new Date().getTime() + 1000 * 60 * 60);
+          localStorage.setItem(
+            'userData',
+            JSON.stringify({
+              userId: await content.userId,
+              token: await content.token,
+              expiration: tokenExpirationTime.toISOString()
+            })
+          );
+          
+          await this.$router.push('/Confirmation');
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    }
+  },
+  async mounted() {
+    try {
+      const response = await fetch(`http://localhost:5000/api/countries`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const content = await response.json();
+      this.countries = content.countries.map(country => country.name);
+      this.countries = this.countries.sort();
+    } catch (err) {
+      console.log(err);
+    }
+  }
 };
+
 </script>
 
 <style>

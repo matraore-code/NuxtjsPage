@@ -18,6 +18,23 @@ const getUsers = async (req, res, next) => {
     res.json({ users: users.map(user => user.toObject({ getters: true })) });
 };
 
+const getUserById = async (req, res, next) => {
+    const userId = req.params.uid;
+    let user;
+    try {
+        user = await User.findById(userId, '-password -notes -rappels -cards -users');
+    } catch (err) {
+        const error = new HttpError('Fetching User failed, please try again later!', 422);
+        return next(error);
+    }
+    if (!user) {
+        const error = new HttpError("No User Found, Please check your login!", 403);
+        return next(error);
+    }
+
+    res.json({ user: user.toObject({ getters: true }) });
+};
+
 const signup = async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -29,10 +46,10 @@ const signup = async (req, res, next) => {
         email,
         password,
     } = req.body;
-
+    
     let existingUser;
     try {
-        existingUser = await User.findOne({ email: email });
+        existingUser = await User.findOne({ email: email }, '-password');
     } catch (err) {
         const error = new HttpError('Signing Up Failed, Please Try Again Later!', 500);
         return next(error);
@@ -53,7 +70,7 @@ const signup = async (req, res, next) => {
 
     const createdUser = new User({
         formule: req.body.formule,
-        photo: "",
+        image: "",
         name: req.body.name,
         surname: req.body.surname,
         address: req.body.address,
@@ -145,6 +162,12 @@ const login = async (req, res, next) => {
 };
 
 const updateUser = async (req, res, next) => {
+    const userId = req.params.uid;
+    if (userId !== req.userData.userId) {
+        const error = new HttpError('You have No Access To this User!', 403);
+        return next(error);
+    }
+
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) { 
@@ -185,7 +208,7 @@ const updateUser = async (req, res, next) => {
     }
 
     user.formule = formule || user.formule;
-    user.photo = req.file && req.file.path || user.photo,
+    user.image = req.file && req.file.path || user.image,
     user.name = name || user.name;
     user.surname = surname || user.surname;
     user.address = address || user.address;
@@ -223,8 +246,8 @@ const addFriend = async (req, res, next) => {
     let existingFriend;
     let user;
     try {
-        existingFriend = await User.findById(friendId);
-        user = await User.findById(req.userData.userId);
+        existingFriend = await User.findById(friendId, '-password');
+        user = await User.findById(req.userData.userId, '-password');
     } catch (err) {
         const error = new HttpError("Adding Friend Failed, Please Try again!", 500);
         return next(error);
@@ -262,8 +285,8 @@ const removeFriend = async (req, res, next) => {
     let existingFriend;
     let user;
     try {
-        existingFriend = await User.findById(friendId);
-        user = await User.findById(req.userData.userId);
+        existingFriend = await User.findById(friendId, '-password');
+        user = await User.findById(req.userData.userId, '-password');
     } catch (err) {
         const error = new HttpError("Remove Friend Failed, Please Try again!", 500);
         return next(error);
@@ -291,6 +314,7 @@ const removeFriend = async (req, res, next) => {
 };
 
 exports.getUsers = getUsers;
+exports.getUserById = getUserById;
 exports.signup = signup;
 exports.login = login;
 exports.updateUser = updateUser;
