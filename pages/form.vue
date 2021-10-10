@@ -13,7 +13,13 @@
       <div class="form">
         <div class="col-md-4">
           <div class="custom-file justify-content-center">
-            <input type="file" class="custom-file-input" id="customFile" />
+            <input
+              ref="file"
+              type="file"
+              class="custom-file-input"
+              id="customFile"
+              @change="onSelect"
+            />
             <label class="custom-file-label" for="customFile"
               >Selectionnez votre photo de profile</label
             >
@@ -199,6 +205,7 @@ export default {
   },
   data() {
     return {
+      image: '',
       formule: "Basique",
       name: "",
       surname: "",
@@ -215,6 +222,10 @@ export default {
     };
   },
   methods: {
+    onSelect() {
+      const file = this.$refs.file.files[0];
+      this.image = file;
+    },
     check_all() {
       this.name = this.name.trim();
       this.surname = this.surname.trim();
@@ -246,6 +257,20 @@ export default {
       this.check_all();
       if (this.errors === "") {
         try {
+          const formData = new FormData();
+          formData.append("image", this.image);
+          formData.append("formule", this.formule);
+          formData.append("name", this.name);
+          formData.append("surname", this.surname);
+          formData.append("email", this.email);
+          formData.append("telephone", this.telephone);
+          formData.append("profession", this.profession);
+          formData.append("address", this.address);
+          formData.append("city", this.city);
+          formData.append("codePostal", this.codePostal);
+          formData.append("country", this.country);
+          formData.append("biography", this.biography);
+          
           const response = await fetch(
             `http://localhost:5000/api/users/signup`,
             {
@@ -262,7 +287,6 @@ export default {
                 city: this.city,
                 codePostal: this.codePostal,
                 country: this.country,
-                password: "0123456789",
                 biography: this.biography,
               }),
             }
@@ -270,21 +294,24 @@ export default {
 
           const content = await response.json();
 
-          const tokenExpirationTime = new Date(
-            new Date().getTime() + 1000 * 60 * 60
-          );
-          localStorage.setItem(
-            "userData",
-            JSON.stringify({
-              userId: await content.userId,
-              token: await content.token,
-              expiration: tokenExpirationTime.toISOString(),
-            })
-          );
-
+          // const tokenExpirationTime = new Date(
+          //   new Date().getTime() + 1000 * 60 * 60
+          // );
+          // localStorage.setItem(
+          //   "userData",
+          //   JSON.stringify({
+          //     userId: await content.userId,
+          //     token: await content.token,
+          //     expiration: tokenExpirationTime.toISOString(),
+          //   })
+          // );
+          if (content.message) {
+            this.errors = content.message;
+          }
           await this.$router.push("/Confirmation");
         } catch (err) {
           console.log(err);
+          this.errors = "Something Went Wrong!";
         }
       }
     },

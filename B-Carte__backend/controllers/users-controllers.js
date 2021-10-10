@@ -60,17 +60,9 @@ const signup = async (req, res, next) => {
         return next(error);
     }
 
-    let hashedPassword;
-    try {
-        hashedPassword = await bcrypt.hash(password, 12);
-    } catch (err) {
-        const error = new HttpError('Could not Create User, Please Try again!', 500);
-        return next(error);
-    }
-
     const createdUser = new User({
         formule: req.body.formule,
-        image: "",
+        image: req.file.path || '',
         name: req.body.name,
         surname: req.body.surname,
         address: req.body.address,
@@ -78,8 +70,8 @@ const signup = async (req, res, next) => {
         city: req.body.city,
         country: req.body.country,
         email: email,
+        password: "", 
         profession: req.body.profession,
-        password: hashedPassword,
         telephone: req.body.telephone,
         whatsapp: "",
         linkedin: "",

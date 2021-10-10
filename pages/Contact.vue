@@ -20,6 +20,7 @@
         <div class="col-md-6">
           <div class="mb-3">
             <input
+              v-model="name"
               type="text"
               class="form-control"
               id="name"
@@ -31,6 +32,7 @@
         <div class="col-md-6">
           <div class="mb-3">
             <input
+              v-model="surname"
               type="text"
               class="form-control"
               id="surname"
@@ -44,6 +46,7 @@
         <div class="col-md-4">
           <div class="mb-3">
             <input
+              v-model="email"
               type="email"
               class="form-control"
               id="email"
@@ -55,6 +58,7 @@
         <div class="col-md-4">
           <div class="mb-3">
             <input
+              v-model="telephone"
               type="tel"
               class="form-control"
               id="telephone"
@@ -66,6 +70,7 @@
         <div class="col-md-4">
           <div class="mb-3">
             <input
+              v-model="profession"
               type="text"
               class="form-control"
               id="status"
@@ -78,7 +83,7 @@
       <div class="row my-5">
         <div class="">
           <label for="message" class="form-label">Votre Message*</label>
-          <textarea class="form-control" id="message" rows="3"></textarea>
+          <textarea v-model="message" class="form-control" id="message" rows="3"></textarea>
         </div>
       </div>
     </div>
@@ -123,6 +128,18 @@ export default {
       ],
     };
   },
+  data () {
+    return {
+      name: '',
+      surname: '',
+      email: '',
+      telephone: '',
+      profession: '',
+      message: '',
+      errors: '',
+      success: '',
+    }
+  }
 };
 </script>
 
