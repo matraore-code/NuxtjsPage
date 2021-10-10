@@ -35,18 +35,25 @@
     "_name": "_132118ff"
   },
   {
-    "name": "profile",
-    "path": "/profile",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/profile.vue",
-    "chunkName": "pages/profile",
-    "_name": "_51781d3e"
-  },
-  {
     "name": "Search",
     "path": "/Search",
     "component": "/home/matraore/Documents/NuxtjsPage/pages/Search.vue",
     "chunkName": "pages/Search",
     "_name": "_5f35df43"
+  },
+  {
+    "name": "uuuu",
+    "path": "/uuuu",
+    "component": "/home/matraore/Documents/NuxtjsPage/pages/uuuu.vue",
+    "chunkName": "pages/uuuu",
+    "_name": "_6c47637b"
+  },
+  {
+    "name": "profile-profile",
+    "path": "/profile/:profile?",
+    "component": "/home/matraore/Documents/NuxtjsPage/pages/profile/_profile.vue",
+    "chunkName": "pages/profile/_profile",
+    "_name": "_2bb5ffcb"
   },
   {
     "name": "index",

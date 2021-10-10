@@ -9,8 +9,9 @@ const _f8b2f888 = () => interopDefault(import('../pages/coming.vue' /* webpackCh
 const _c0872de0 = () => interopDefault(import('../pages/Confirmation.vue' /* webpackChunkName: "pages/Confirmation" */))
 const _a68b67d6 = () => interopDefault(import('../pages/Contact.vue' /* webpackChunkName: "pages/Contact" */))
 const _132118ff = () => interopDefault(import('../pages/form.vue' /* webpackChunkName: "pages/form" */))
-const _51781d3e = () => interopDefault(import('../pages/profile.vue' /* webpackChunkName: "pages/profile" */))
 const _5f35df43 = () => interopDefault(import('../pages/Search.vue' /* webpackChunkName: "pages/Search" */))
+const _6c47637b = () => interopDefault(import('../pages/uuuu.vue' /* webpackChunkName: "pages/uuuu" */))
+const _2bb5ffcb = () => interopDefault(import('../pages/profile/_profile.vue' /* webpackChunkName: "pages/profile/_profile" */))
 const _90bb89b2 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -45,13 +46,17 @@ export const routerOptions = {
     component: _132118ff,
     name: "form"
   }, {
-    path: "/profile",
-    component: _51781d3e,
-    name: "profile"
-  }, {
     path: "/Search",
     component: _5f35df43,
     name: "Search"
+  }, {
+    path: "/uuuu",
+    component: _6c47637b,
+    name: "uuuu"
+  }, {
+    path: "/profile/:profile?",
+    component: _2bb5ffcb,
+    name: "profile-profile"
   }, {
     path: "/",
     component: _90bb89b2,

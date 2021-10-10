@@ -9,6 +9,8 @@ const router = express.Router();
 
 router.get('/', usersControllers.getUsers); // to remove after
 
+router.get('/:uid', usersControllers.getUserById);
+
 router.post('/signup',
     [
         check('formule').not().isEmpty(),
@@ -28,8 +30,6 @@ router.post('/signup',
 );
 
 router.post('/login', usersControllers.login);
-
-router.get('/:uid', usersControllers.getUserById);
 
 router.use(checkAuth);
 
