@@ -2,7 +2,8 @@
   <body>
     <section>
       <div class="container">
-        <div v-if="fetched" class="logo">
+        <!-- <div v-if="fetched" class="logo"> -->
+        <div class="logo">
           <img
             src="~/assets/images/logon.png"
             alt=""
@@ -16,44 +17,47 @@
               srcset=""
               class="profile_img"
             />
-            <h3 class="text-center fs-2">{{ surname + ' ' + name }}</h3>
+            <h3 class="text-center fs-2">{{ surname + " " + name }}</h3>
             <h4 class="text-center">{{ profession }}</h4>
             <div class="col text-center mx-auto w-75">
-            <span >{{ biography }}</span>
+              <span>{{ biography }}</span>
             </div>
             <div class="c mt-5 top-m">
               <a href="#" class="btn btn-success btn-profile w-50 mt-5">
-                <i class="far fa-envelope "></i>
-                <span class="text-center "></span></a
-              >
+                <i class="far fa-envelope icn"></i>
+                <span class="text-center">support@bcarte.com</span
+              ></a>
             </div>
             <div class="c">
-              <a href="#" class="btn btn-success btn-profile w-50 mt-2">
-                <i class="fas fa-phone-alt"></i>
-                <span class="text-center">{{ telephone }}</span></a
+              <a href="#" class="btn btn-success btn-profile w-50 mt-2 mb-3">
+                <i class="fas fa-phone-alt icn"></i>
+                <span class="text-center">0696543240</span></a
               >
             </div>
-            <div class="d-flex justify-content-center mt-5 re">
-              <h4 class="mx-3">Liens</h4>
-              <i class="fab fa-linkedin-in mx-3 fs-2 text-primary">{{ linkedin }}</i>
-              <i class="fab fa-instagram mx-3 fs-2 text-warning">{{ instagram }}</i>
-              <i class="fab fa-facebook mx-3 fs-2 text-primary">{{ facebook }}</i>
-              <i class="fab fa-whatsapp mx-3 fs-2 text-success">{{ whatsapp }}</i>
-              <i class="fab fa-github mx-3 fs-2 text-dark">{{ github }}</i>
-              <i class="fas fa-link mx-3 fs-2 text-danger">{{ fax }}</i>
+            <div class="">
+              <h4 class="text-center my-5">Liens</h4>
+              <div class="d-flex justify-content-center mt-5 re">
+                <i class="fab fa-linkedin-in mx-3 fs-2 text-primary">{{
+                  linkedin
+                }}</i>
+                <i class="fab fa-whatsapp mx-3 fs-2 text-success">{{
+                  whatsapp
+                }}</i>
+                <i class="fab fa-github mx-3 fs-2 text-dark">{{ github }}</i>
+                <i class="fas fa-link mx-3 fs-2 text-danger">{{ fax }}</i>
+              </div>
             </div>
             <div class="d-flex justify-content-center re">
-                <a href="#" class="btn btn-success btn-profile mt-5 register">
-                
+              <a href="#" class="btn btn-success btn-profile mt-5 register">
                 Enregistrer</a
               >
             </div>
           </div>
         </div>
-        <div v-else>
+        <!-- <div v-else>
           <span class="text-danger">Aucun utilisateur avec ce nom.
           </span>
-        </div>
+        </div> -->
       </div>
     </section>
   </body>
@@ -79,37 +83,40 @@ export default {
       ],
     };
   },
-  data () {
+  data() {
     return {
       fetched: false,
-      message: '',
-      image: '',
-      name: '',
-      surname: '',
-      email: '',
-      telephone: '',
-      profession: '',
-      biography: '',
-      linkedin: '',
-      instagram: '',
-      facebook: '',
-      whatsapp: '',
-      github: '',
-      fax: ''
-    }
+      message: "",
+      image: "",
+      name: "",
+      surname: "",
+      email: "",
+      telephone: "",
+      profession: "",
+      biography: "",
+      linkedin: "",
+      instagram: "",
+      facebook: "",
+      whatsapp: "",
+      github: "",
+      fax: "",
+    };
   },
   async mounted() {
     try {
-      const userData = JSON.parse(localStorage.getItem('userData'));
+      const userData = JSON.parse(localStorage.getItem("userData"));
       console.log(userData);
-      
-      const response = await fetch(`http://localhost:5000/api/users/${userData.userId}`, {
-        method: "GET",
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + userData.token,
+
+      const response = await fetch(
+        `http://localhost:5000/api/users/${userData.userId}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + userData.token,
+          },
         }
-      });
+      );
 
       const content = await response.json();
       if (content.message) {
@@ -118,7 +125,7 @@ export default {
       } else {
         this.fetched = true;
         const user = await content.user;
-      
+
         this.image = user.image;
         this.name = user.name;
         this.surname = user.surname;
@@ -135,7 +142,7 @@ export default {
     } catch (err) {
       console.log(err.message);
     }
-  }
+  },
 };
 </script>
 
@@ -182,21 +189,24 @@ h2 {
 }
 .btn-profile {
   background-color: #ec595a;
-  padding: 0.5rem;
+  padding: 0.9rem;
 }
 
 .btn-profile:hover {
-    background-color: #ec595a;
-    border: 1px solid #ec595a;
+  background-color: #ec595a;
+  border: 1px solid #ec595a;
 }
 
 .re {
-        margin-top: 2rem !important;
-
+  margin-top: 2rem !important;
 }
 
 .register {
-    margin-top: 2rem;
-    background-color: #ec595a;
+  margin-top: 2rem;
+  background-color: #ec595a;
+}
+
+.icn {
+  float: left;
 }
 </style>
