@@ -2,8 +2,8 @@
   <body>
     <section>
       <div class="container">
-        <!-- <div v-if="fetched" class="logo"> -->
-        <div class="logo">
+        <div v-if="fetched" class="logo">
+        <!-- <div class="logo"> -->
           <img
             src="~/assets/images/logon.png"
             alt=""
@@ -31,7 +31,7 @@
             <div class="c">
               <a href="#" class="btn btn-success btn-profile w-50 mt-2 mb-3">
                 <i class="fas fa-phone-alt icn"></i>
-                <span class="text-center">0696543240</span></a
+                <span class="text-center">{{telephone}}</span></a
               >
             </div>
             <div class="">
@@ -54,10 +54,10 @@
             </div>
           </div>
         </div>
-        <!-- <div v-else>
+        <div v-else>
           <span class="text-danger">Aucun utilisateur avec ce nom.
           </span>
-        </div> -->
+        </div>
       </div>
     </section>
   </body>
@@ -113,7 +113,7 @@ export default {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + userData.token,
+            Authorization: "Bearer " + userData.token || '',
           },
         }
       );

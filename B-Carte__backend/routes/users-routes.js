@@ -29,9 +29,9 @@ router.post('/signup',
 
 router.post('/login', usersControllers.login);
 
-router.use(checkAuth);
-
 router.get('/:uid', usersControllers.getUserById);
+
+router.use(checkAuth);
 
 router.patch('/update/:uid',
     // fileUpload.single('image'),
