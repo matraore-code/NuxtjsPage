@@ -9,6 +9,8 @@ const router = express.Router();
 
 router.get('/', usersControllers.getUsers); // to remove after
 
+router.get('/:uid', usersControllers.getUserById);
+
 router.post('/signup',
     [
         check('formule').not().isEmpty(),
@@ -30,8 +32,6 @@ router.post('/signup',
 router.post('/login', usersControllers.login);
 
 router.use(checkAuth);
-
-router.get('/:uid', usersControllers.getUserById);
 
 router.patch('/update/:uid',
     // fileUpload.single('image'),

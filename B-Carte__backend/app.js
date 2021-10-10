@@ -9,7 +9,7 @@ const HttpError = require('./models/http-error');
 const usersRoutes = require('./routes/users-routes');
 const notesRoutes = require('./routes/notes-routes');
 const rappelsRoutes = require('./routes/rappels-routes');
-const countrisRoutes = require('./routes/countries-routes');
+const countriesRoutes = require('./routes/countries-routes');
 
 const app = express();
 
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/countries', countrisRoutes);
+app.use('/api/countries', countriesRoutes);
 
 
 app.use('/api/users', usersRoutes);
