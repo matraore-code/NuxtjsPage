@@ -205,7 +205,7 @@ export default {
   },
   data() {
     return {
-      image: '',
+      image: null,
       formule: "Basique",
       name: "",
       surname: "",
@@ -249,7 +249,11 @@ export default {
         this.biography === ""
       ) {
         this.errors = "Remplir tous les champs.";
-      } else {
+      } else if (this.image == null)
+      {
+        this.errors = "Please choose un image.";
+      }
+      else {
         this.errors = "";
       }
     },
@@ -275,20 +279,7 @@ export default {
             `http://localhost:5000/api/users/signup`,
             {
               method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                formule: this.formule,
-                name: this.name,
-                surname: this.surname,
-                email: this.email,
-                telephone: this.telephone,
-                profession: this.prefession,
-                address: this.address,
-                city: this.city,
-                codePostal: this.codePostal,
-                country: this.country,
-                biography: this.biography,
-              }),
+              body: formData
             }
           );
 
@@ -307,8 +298,9 @@ export default {
           // );
           if (content.message) {
             this.errors = content.message;
+          } else {
+            await this.$router.push("/Confirmation");
           }
-          await this.$router.push("/Confirmation");
         } catch (err) {
           console.log(err);
           this.errors = "Something Went Wrong!";
