@@ -29,7 +29,7 @@ const sendEmail = async (req, res, next) => {
       const error = new HttpError("Creating Mail Failed, Please try again!", 500);
       return next(error);
     }
-    res.status(200).json({ message: "Message Send With Success." });
+    res.status(200).json({ message: "Message Sent With Success." });
 };
 
 exports.sendEmail = sendEmail;

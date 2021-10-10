@@ -2,64 +2,64 @@
   {
     "name": "About",
     "path": "/About",
-    "component": "C:\\\\Users\\\\amine\\\\Desktop\\\\BCarte\\\\pages\\\\About.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/About.vue",
     "chunkName": "pages/About",
-    "_name": "_706394b2"
+    "_name": "_4eeb8f9b"
   },
   {
     "name": "coming",
     "path": "/coming",
-    "component": "C:\\\\Users\\\\amine\\\\Desktop\\\\BCarte\\\\pages\\\\coming.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/coming.vue",
     "chunkName": "pages/coming",
-    "_name": "_4d290a12"
+    "_name": "_35f95f83"
   },
   {
     "name": "Confirmation",
     "path": "/Confirmation",
-    "component": "C:\\\\Users\\\\amine\\\\Desktop\\\\BCarte\\\\pages\\\\Confirmation.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/Confirmation.vue",
     "chunkName": "pages/Confirmation",
-    "_name": "_32886fea"
+    "_name": "_3f91d8d2"
   },
   {
     "name": "Contact",
     "path": "/Contact",
-    "component": "C:\\\\Users\\\\amine\\\\Desktop\\\\BCarte\\\\pages\\\\Contact.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/Contact.vue",
     "chunkName": "pages/Contact",
-    "_name": "_0f943c3a"
+    "_name": "_44c2e92e"
   },
   {
     "name": "form",
     "path": "/form",
-    "component": "C:\\\\Users\\\\amine\\\\Desktop\\\\BCarte\\\\pages\\\\form.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/form.vue",
     "chunkName": "pages/form",
-    "_name": "_4aa0a2fa"
+    "_name": "_36363a86"
   },
   {
     "name": "Search",
     "path": "/Search",
-    "component": "C:\\\\Users\\\\amine\\\\Desktop\\\\BCarte\\\\pages\\\\Search.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/Search.vue",
     "chunkName": "pages/Search",
-    "_name": "_960a5304"
+    "_name": "_1188bb0a"
   },
   {
     "name": "uuuu",
     "path": "/uuuu",
-    "component": "C:\\\\Users\\\\amine\\\\Desktop\\\\BCarte\\\\pages\\\\uuuu.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/uuuu.vue",
     "chunkName": "pages/uuuu",
-    "_name": "_b8722514"
+    "_name": "_e146f5fc"
   },
   {
     "name": "profile-profile",
     "path": "/profile/:profile?",
-    "component": "C:\\\\Users\\\\amine\\\\Desktop\\\\BCarte\\\\pages\\\\profile\\\\_profile.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/profile/_profile.vue",
     "chunkName": "pages/profile/_profile",
-    "_name": "_26ea028d"
+    "_name": "_023a0ed2"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\amine\\\\Desktop\\\\BCarte\\\\pages\\\\index.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_7013f08c"
+    "_name": "_119d6b00"
   }
 ]
