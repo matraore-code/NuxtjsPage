@@ -6,25 +6,25 @@ import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
-import '../assets/css/bootstrap.min.css'
+import '..\\assets\\css\\bootstrap.min.css'
 
-import '../assets/css/flaticon.css'
+import '..\\assets\\css\\flaticon.css'
 
-import '../assets/css/menu.css'
+import '..\\assets\\css\\menu.css'
 
-import '../assets/css/dropdown-effects/fade-down.css'
+import '..\\assets\\css\\dropdown-effects\\fade-down.css'
 
-import '../assets/css/magnific-popup.css'
+import '..\\assets\\css\\magnific-popup.css'
 
-import '../assets/css/owl.carousel.min.css'
+import '..\\assets\\css\\owl.carousel.min.css'
 
-import '../assets/css/owl.theme.default.min.css'
+import '..\\assets\\css\\owl.theme.default.min.css'
 
-import '../assets/css/animate.css'
+import '..\\assets\\css\\animate.css'
 
-import '../assets/css/style.css'
+import '..\\assets\\css\\style.css'
 
-import '../assets/css/responsive.css'
+import '..\\assets\\css\\responsive.css'
 
 import _6f6c098b from './layouts/default.vue'
 

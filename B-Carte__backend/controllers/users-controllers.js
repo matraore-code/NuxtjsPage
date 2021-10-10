@@ -42,10 +42,7 @@ const signup = async (req, res, next) => {
         return next(error);
     }
 
-    const {
-        email,
-        password,
-    } = req.body;
+    const { email } = req.body;
     
     let existingUser;
     try {
