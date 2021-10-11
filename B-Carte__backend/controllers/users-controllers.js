@@ -59,7 +59,7 @@ const signup = async (req, res, next) => {
 
     const createdUser = new User({
         formule: req.body.formule,
-        image: req.file.path || '',
+        image: req.file && req.file.path || '',
         name: req.body.name,
         surname: req.body.surname,
         address: req.body.address,
