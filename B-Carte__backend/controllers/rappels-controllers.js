@@ -52,8 +52,8 @@ const getRappelByUserId = async (req, res, next) => {
         return next(error);
     }
 
-    if (userWithRappels && userWithRappels.formule === "Basique") {
-        const error = new HttpError("The users with Basique account can't have Rappels!", 403);
+    if (userWithRappels && userWithRappels.formule !== "Premium") {
+        const error = new HttpError("The users with Basique or Standard account can't have Rappels!", 403);
         return next(error);
     }
 
@@ -80,8 +80,8 @@ const createRappel = async (req, res, next) => {
         return next(error);
     }
 
-    if (user.formule === "Basique") {
-        const error = new HttpError("User With Basique Account, can't create a Rappel!", 403);
+    if (user.formule !== "Premium") {
+        const error = new HttpError("User With Basique or Standard Account, can't create a Rappel!", 403);
         return next(error);
     }
 
