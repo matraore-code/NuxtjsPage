@@ -45,7 +45,7 @@
 
                 <!-- HEADER BUTTON -->
                 <li class="nl-simple" aria-haspopup="true">
-                  <Nuxt-link to='/coming' class="btn btn-violet-red tra-grey-hover last-link"> Commencer</Nuxt-link>
+                  <Nuxt-link to='/form' class="btn btn-violet-red tra-grey-hover last-link"> Commencer</Nuxt-link>
                   <!-- <a
                     href="#content-5"
                     class="btn btn-violet-red tra-grey-hover last-link"

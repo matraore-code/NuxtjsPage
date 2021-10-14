@@ -247,7 +247,7 @@ export default {
       if (this.errors === "") {
         try {
           const response = await fetch(
-            `http://localhost:5000/api/users/signup`,
+            `${process.env.NUXT_APP_API_ENDPOINT || ''}/api/users/signup`,
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
