@@ -12,7 +12,7 @@
           />
           <div class="profile">
             <img
-              src="~/assets/images/user.jpg"
+              :src="image"
               alt=""
               srcset=""
               class="profile_img"
@@ -125,7 +125,7 @@ export default {
         this.fetched = true;
         const user = await content.user;
 
-        this.image = user.image;
+        this.image = "http://localhost:5000/" + user.image;
         this.name = user.name;
         this.surname = user.surname;
         this.profession = user.profession;

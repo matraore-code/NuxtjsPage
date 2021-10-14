@@ -2,64 +2,64 @@
   {
     "name": "About",
     "path": "/About",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/About.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/About.vue",
     "chunkName": "pages/About",
-    "_name": "_0f5c8042"
+    "_name": "_4eeb8f9b"
   },
   {
     "name": "coming",
     "path": "/coming",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/coming.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/coming.vue",
     "chunkName": "pages/coming",
-    "_name": "_f8b2f888"
+    "_name": "_35f95f83"
   },
   {
     "name": "Confirmation",
     "path": "/Confirmation",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/Confirmation.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/Confirmation.vue",
     "chunkName": "pages/Confirmation",
-    "_name": "_c0872de0"
+    "_name": "_3f91d8d2"
   },
   {
     "name": "Contact",
     "path": "/Contact",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/Contact.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/Contact.vue",
     "chunkName": "pages/Contact",
-    "_name": "_a68b67d6"
+    "_name": "_44c2e92e"
   },
   {
     "name": "form",
     "path": "/form",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/form.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/form.vue",
     "chunkName": "pages/form",
-    "_name": "_132118ff"
+    "_name": "_36363a86"
   },
   {
     "name": "Search",
     "path": "/Search",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/Search.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/Search.vue",
     "chunkName": "pages/Search",
-    "_name": "_5f35df43"
+    "_name": "_1188bb0a"
   },
   {
     "name": "uuuu",
     "path": "/uuuu",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/uuuu.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/uuuu.vue",
     "chunkName": "pages/uuuu",
-    "_name": "_6c47637b"
+    "_name": "_e146f5fc"
   },
   {
     "name": "profile-profile",
     "path": "/profile/:profile?",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/profile/_profile.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/profile/_profile.vue",
     "chunkName": "pages/profile/_profile",
-    "_name": "_2bb5ffcb"
+    "_name": "_023a0ed2"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/matraore/Documents/NuxtjsPage/pages/index.vue",
+    "component": "/goinfre/mlachheb/NuxtjsPage/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_90bb89b2"
+    "_name": "_119d6b00"
   }
 ]

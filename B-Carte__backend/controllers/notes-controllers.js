@@ -50,8 +50,8 @@ const getNotesByUserId = async (req, res, next) => {
         const error = new HttpError("Could not find a Note for the provided User id!", 404);
         return next(error);
     }
-    if (userWithNotes && userWithNotes.formule === "Basique") {
-        const error = new HttpError("The users with the Basique account can't have Notes!", 403);
+    if (userWithNotes && userWithNotes.formule !== "Premium") {
+        const error = new HttpError("The users with the Basique or Standard account can't have Notes!", 403);
         return next(error);
     }
 
@@ -78,9 +78,9 @@ const createNote = async (req, res, next) => {
         return next(error);
     }
 
-    if (user.formule === "Basique")
+    if (user.formule !== "Premium")
     {
-        const error  = new HttpError("User With Basique Account, can't create a Note!", 403);
+        const error  = new HttpError("User With Basique or Standard Account, can't create a Note!", 403);
         return next(error);
     }
     const { description } = req.body;

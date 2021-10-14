@@ -15,7 +15,7 @@ const userSchema = new Schema({
     country: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     profession: { type: String, required:true },
-    password: { type: String, required: true, minlength: 8 },
+    password: { type: String, required: false },
     telephone: { type: String, required: true },
     whatsapp: { type: String, required: false },
     linkedin: { type: String, required: false },

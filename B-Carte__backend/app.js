@@ -10,6 +10,7 @@ const usersRoutes = require('./routes/users-routes');
 const notesRoutes = require('./routes/notes-routes');
 const rappelsRoutes = require('./routes/rappels-routes');
 const countriesRoutes = require('./routes/countries-routes');
+const mailerRoutes = require('./routes/mailer-routes');
 
 const app = express();
 
@@ -29,10 +30,10 @@ app.use((req, res, next) => {
 
 app.use('/api/countries', countriesRoutes);
 
-
 app.use('/api/users', usersRoutes);
 app.use('/api/notes', notesRoutes);
 app.use('/api/rappels', rappelsRoutes);
+app.use('/api/sendEmail', mailerRoutes);
 
 app.use((req, res, next) => {
     throw new HttpError("Could Not Find This Route!", 404);

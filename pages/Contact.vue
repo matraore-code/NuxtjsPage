@@ -20,6 +20,7 @@
         <div class="col-md-6">
           <div class="mb-3">
             <input
+              v-model="name"
               type="text"
               class="form-control"
               id="name"
@@ -31,6 +32,7 @@
         <div class="col-md-6">
           <div class="mb-3">
             <input
+              v-model="surname"
               type="text"
               class="form-control"
               id="surname"
@@ -44,6 +46,7 @@
         <div class="col-md-4">
           <div class="mb-3">
             <input
+              v-model="email"
               type="email"
               class="form-control"
               id="email"
@@ -55,6 +58,7 @@
         <div class="col-md-4">
           <div class="mb-3">
             <input
+              v-model="telephone"
               type="tel"
               class="form-control"
               id="telephone"
@@ -66,6 +70,7 @@
         <div class="col-md-4">
           <div class="mb-3">
             <input
+              v-model="profession"
               type="text"
               class="form-control"
               id="status"
@@ -78,11 +83,13 @@
       <div class="row my-5">
         <div class="">
           <label for="message" class="form-label">Votre Message*</label>
-          <textarea class="form-control" id="message" rows="3"></textarea>
+          <textarea v-model="message" class="form-control" id="message" rows="3"></textarea>
+          <span class="text-danger">{{ errors }}</span>
+          <span class="text-success">{{ success }}</span>
         </div>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary mb-3 btn-submit ">
+    <button type="submit" class="btn btn-primary mb-3 btn-submit" v-on:click.prevent="sendEmail">
       Envoyer
     </button>
 
@@ -123,6 +130,79 @@ export default {
       ],
     };
   },
+  data () {
+    return {
+      name: '',
+      surname: '',
+      email: '',
+      telephone: '',
+      profession: '',
+      message: '',
+      errors: '',
+      success: '',
+    }
+  },
+  methods: {
+    check_all() {
+      this.name = this.name.trim();
+      this.surname = this.surname.trim();
+      this.email = this.email.trim();
+      this.message = this.message.trim();
+      if (
+        this.name === "" ||
+        this.surname === "" ||
+        this.email === "" ||
+        this.message === ""
+      ) {
+        this.errors = "Remplir tous les champs.";
+        this.success = "";
+      } else if (this.message.length < 15)
+      {
+        this.errors = "Message Must be more than 15 characters.";
+        this.success = "";
+      }
+      else {
+        this.errors = "";
+      }
+    },
+    async sendEmail() {
+      this.check_all();
+      if (this.errors === "") {
+        try {
+          const response = await fetch(
+            `http://localhost:5000/api/sendEmail`,
+            {
+              method: "POST",
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                name: this.name,
+                surname: this.surname,
+                email: this.email,
+                telephone: this.telephone,
+                profession: this.profession,
+                message: this.message
+              })
+            }
+          );
+          const content = await response.json();
+          if (content.message) {
+            this.errors = "";
+            this.success = content.message;
+            this.name = "";
+            this.surname = "";
+            this.email = "";
+            this.message = "";
+            this.telephone = "";
+            this.profession = "";
+          }
+        } catch (err) {
+          console.log(err);
+          this.errors = "Something Went Wrong, Try again!";
+          this.success = "";
+        }
+      }
+    }
+  }
 };
 </script>
 

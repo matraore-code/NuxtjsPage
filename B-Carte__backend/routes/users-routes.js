@@ -12,6 +12,7 @@ router.get('/', usersControllers.getUsers); // to remove after
 router.get('/:uid', usersControllers.getUserById);
 
 router.post('/signup',
+    fileUpload.single('image'),
     [
         check('formule').not().isEmpty(),
         check('name').not().isEmpty(),
@@ -23,7 +24,6 @@ router.post('/signup',
         check('codePostal').not().isEmpty(),
         check('city').not().isEmpty(),
         check('country').not().isEmpty(),
-        check('password').isLength( { min: 8 }),
         check('biography').not().isEmpty()
     ],
     usersControllers.signup
