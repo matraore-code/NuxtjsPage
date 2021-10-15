@@ -108,7 +108,7 @@ export default {
       console.log(userData);
 
       const response = await fetch(
-        `http://localhost:5000/api/users/${this.$route.params.profile}`,
+        `${process.env.NUXT_APP_API_ENDPOINT || ''}/api/users/${this.$route.params.profile}`,
         {
           method: "GET",
           headers: {
@@ -125,7 +125,7 @@ export default {
         this.fetched = true;
         const user = await content.user;
 
-        this.image = "http://localhost:5000/" + user.image;
+        this.image = "${process.env.NUXT_APP_API_ENDPOINT || ''}" + user.image;
         this.name = user.name;
         this.surname = user.surname;
         this.profession = user.profession;
